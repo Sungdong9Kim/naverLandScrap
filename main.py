@@ -1,8 +1,13 @@
 import time
 from selenium import webdriver
+from openpyxl import Workbook
 
 driver = webdriver.Chrome()
 driver.implicitly_wait(3)
+
+wb = Workbook(write_only=True)
+ws = wb.create_sheet('부동산 정보')
+ws.append(['평형', '매매/전세', "가격"])
 #
 # driver.get('https://land.naver.com/')
 #
